@@ -16,7 +16,7 @@ const port = process.env.PORT || 3000;
 const app = express();
 
 const corsOption = {
-  origin: "https://schoolofregeneration.com",
+  origin: "https://hsfl-frontend.onrender.com",
   credentials: true,
 };
 app.use(cors(corsOption));
