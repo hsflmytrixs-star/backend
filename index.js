@@ -87,7 +87,7 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
-app.post("/api/upload", isAuthenticated, upload.single("file"), function (req, res) {
+app.post("/api/upload", upload.single("file"), function (req, res) {
   if (!req.file) {
     return res.status(400).json({ success: false, message: "No file uploaded" });
   }
@@ -100,7 +100,7 @@ app.post("/api/upload", isAuthenticated, upload.single("file"), function (req, r
 });
 
 // Video upload
-app.post("/api/upload/video", isAuthenticated, upload.single("video"), function (req, res) {
+app.post("/api/upload/video", upload.single("video"), function (req, res) {
   if (!req.file) {
     return res.status(400).json({ success: false, message: "No video uploaded" });
   }
